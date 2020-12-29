@@ -1,0 +1,32 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="CodeFactory" #>
+<#@ assembly name="CodeFactory.DotNet" #>
+<#@ assembly name="CodeFactory.VisualStudio" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="CodeFactory" #>
+<#@ import namespace="CodeFactory.DotNet" #>
+<#@ import namespace="CodeFactory.DotNet.CSharp" #>
+<#@ import namespace="CodeFactory.VisualStudio" #>
+<#@ import namespace="WcfToGrpcCommands.Writers.Templates" #>
+<#
+    //Accessing the model data passed in by GenerateSource method.
+    var model = ModelData as GrpcCsServiceOperationWriter;
+    
+#>
+public override async Task<<#= model.ResponseMessageName #>> <#= model.MethodName #>(<#= model.RequestMessageName #> request, ServerCallContext context)
+{
+    if (request == null)
+    {
+        throw new RpcException(new Status(StatusCode.InvalidArgument, $"{nameof(request)} cannot be null"));
+    }
+    var response = new <#= model.ResponseMessageName #>();
+
+    //TODO: Update original code
+    <#= model.OldContent.CommentOut().IndentSub(1)#>
+    
+    //TODO: Map to response object
+    return response;
+}

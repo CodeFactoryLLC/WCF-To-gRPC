@@ -1,0 +1,39 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="CodeFactory" #>
+<#@ assembly name="CodeFactory.DotNet" #>
+<#@ assembly name="CodeFactory.VisualStudio" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="CodeFactory" #>
+<#@ import namespace="CodeFactory.DotNet" #>
+<#@ import namespace="CodeFactory.DotNet.CSharp" #>
+<#@ import namespace="CodeFactory.VisualStudio" #>
+<#@ import namespace="WcfToGrpcCommands.Writers.Templates" #>
+<#
+    //Accessing the model data passed in by GenerateSource method.
+    var model = ModelData as GrpcCsServiceWriter;
+#>
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Grpc.Core;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
+using <#= model.ProtoNamespace #>;
+
+namespace <#= model.CodeNamespace #>
+{
+    public class <#= model.ServiceName #> : Protos.<#= model.ServiceName #>.<#= model.ServiceName #>Base
+    {
+        private readonly ILogger<<#= model.ServiceName #>> _logger;
+
+        public <#= model.ServiceName #>(ILogger<<#= model.ServiceName #>> logger)
+        {
+            _logger = logger;
+        }
+
+        <#= model.Operations.WriteAllCode().IndentSub(2) #>
+    }
+}

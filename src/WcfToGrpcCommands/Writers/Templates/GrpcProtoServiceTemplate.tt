@@ -1,0 +1,21 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="CodeFactory" #>
+<#@ assembly name="CodeFactory.DotNet" #>
+<#@ assembly name="CodeFactory.VisualStudio" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="CodeFactory" #>
+<#@ import namespace="CodeFactory.DotNet" #>
+<#@ import namespace="CodeFactory.DotNet.CSharp" #>
+<#@ import namespace="CodeFactory.VisualStudio" #>
+<#@ import namespace="WcfToGrpcCommands.Writers.Templates" #>
+<#
+    //Accessing the model data passed in by GenerateSource method.
+    var model = ModelData as GrpcProtoServiceWriter;
+    
+#>
+service <#= model.ServiceName #> {
+    <#= model.Operations.WriteAllCode().IndentSub(1) #>
+}

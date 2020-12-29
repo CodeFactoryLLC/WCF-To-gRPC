@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23933689-7E70-4616-9116-B20D03154934}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WcfToGrpcCommands</RootNamespace>
+    <AssemblyName>WcfToGrpcCommands</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <PackageReference Include="CodeFactorySDK">
+      <Version>1.0.202301</Version>
+    </PackageReference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\SetupGrpcProjectCommand.cs" />
+    <Compile Include="Migrators\MigratorOptions.cs" />
+    <Compile Include="Migrators\WcfMigrator.cs" />
+    <Compile Include="Migrators\WcfServiceMigrator.cs" />
+    <Compile Include="Migrators\WcfServiceOperationMigrator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CodeFactoryMixins.cs" />
+    <Compile Include="Writers\GrpcConfigDepBlockWriter.cs" />
+    <Compile Include="Writers\GrpcConfigWriter.cs" />
+    <Compile Include="Writers\GrpcCsServiceOperationWriter.cs" />
+    <Compile Include="Writers\GrpcProtoMessageWriter.cs" />
+    <Compile Include="Writers\GrpcProtoMessageFieldWriter.cs" />
+    <Compile Include="Writers\GrpcProtoServiceOperationWriter.cs" />
+    <Compile Include="Writers\GrpcProtoServiceWriter.cs" />
+    <Compile Include="Writers\GrpcProtoWriter.cs" />
+    <Compile Include="Writers\GrpcCsServiceWriter.cs" />
+    <Compile Include="Writers\GrpcTypeConverter.cs" />
+    <Compile Include="Writers\ICodeWriter.cs" />
+    <Compile Include="Writers\Templates\GrpcConfigTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrpcConfigTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcConfigTemplate.transform.cs">
+      <DependentUpon>GrpcConfigTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcCsServiceOperationTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrpcCsServiceOperationTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcCsServiceOperationTemplate.transform.cs">
+      <DependentUpon>GrpcCsServiceOperationTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcCsServiceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrpcCsServiceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcCsServiceTemplate.transform.cs">
+      <DependentUpon>GrpcCsServiceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcProtoMessageTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrpcProtoMessageTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcProtoMessageTemplate.transform.cs">
+      <DependentUpon>GrpcProtoMessageTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcProtoServiceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrpcProtoServiceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcProtoServiceTemplate.transform.cs">
+      <DependentUpon>GrpcProtoServiceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcProtoTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrpcProtoTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\Templates\GrpcProtoTemplate.transform.cs">
+      <DependentUpon>GrpcProtoTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Writers\WriterBase.cs" />
+    <Compile Include="Writers\WriterMixins.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Writers\Templates\GrpcConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GrpcConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Writers\Templates\GrpcCsServiceOperationTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GrpcCsServiceOperationTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Writers\Templates\GrpcCsServiceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GrpcCsServiceTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Writers\Templates\GrpcProtoMessageTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GrpcProtoMessageTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Writers\Templates\GrpcProtoServiceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GrpcProtoServiceTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Writers\Templates\GrpcProtoTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GrpcProtoTemplate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild">
+    <Exec Command="&quot;$(DevEnvDir)PublicAssemblies\CodeFactory\Packager\cfxpackager.exe&quot; &quot;$(TargetPath)&quot;" />
+    <!-- <PackageCfx Assembly="$(TargetPath)"/>-->
+  </Target>
+</Project>
