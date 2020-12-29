@@ -1,7 +1,7 @@
 # WCF-To-gRPC
 A CodeFactory automation template that will help to migrate WCF services over to gRPC
 
-This is an extenadable automation template designed for the purpose of migrating legacy WCF code to modern gRPC code.  This template is function and works specifically on the majority use case, which is plain vanilla 2-way WCF calls.  Please see the know limitations to understand how to extend this template.  This template is offered as open-source and anyone can download and alter it to suit their needs.
+This is an extenadable automation template designed for the purpose of migrating legacy WCF code to modern gRPC code.  This template is functional and works specifically on the majority use case, which is plain vanilla 2-way WCF calls.  Please see the know limitations to understand how to extend this template.  This template is offered as open-source and anyone can download and alter it to suit their needs.
 
 ## How It Works
 
