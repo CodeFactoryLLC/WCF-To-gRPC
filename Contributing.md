@@ -18,7 +18,7 @@ Note: Please don't file an issue to ask a question. You'll get faster results by
 
 This section guides you through submitting a bug report for open source content. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports. 
 
-Before creating bug reports, please check [this list] as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible. Fill out the required template, the information it asks for helps us resolve issues faster. 
+Before creating bug reports, please check [this list](https://github.com/CodeFactoryLLC/WCF-To-gRPC/issues) as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible. Fill out the required template, the information it asks for helps us resolve issues faster. 
 
 Note: If you find a Closed issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one. 
 
@@ -33,7 +33,7 @@ Perform a cursory search to see if the problem has already been reported. If it 
 # How Can I Contribute? 
 
 ### Accessing #HelpWanted Issues
-We've created a few issues tagged with #HelpWanted to indicate where we think there would be significant interest once an automation has been authorided and published. We monitor the [Issue List](https://github.com/CodeFactoryLLC/Public-Projects/issues) for any questions or support needs you might have to get started building your own custom CodeFactory Automation Command packages.
+We've created a few issues tagged with #HelpWanted to indicate where we think there would be significant interest once an automation has been authorided and published. We monitor the [Issue List](https://github.com/CodeFactoryLLC/WCF-To-gRPC/issues) for any questions or support needs you might have to get started building your own custom CodeFactory Automation Command packages.
 
 ### Build New or Improve Existing Packages?
 
