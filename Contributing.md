@@ -2,7 +2,7 @@
 (under contruction)
 ### First off, thanks for taking the time to contribute to the WCF-to-gRPC conversion template! 
 
-The following is a set of guidelines for contributing to CodeFactory and its open source community-sourced automation packages, like this one, which are highlighted and linked on the [Public Projects](https://github.com/CodeFactoryLLC/Public-Projects) repo on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request. 
+The following is a set of guidelines for contributing to CodeFactory and its open source community-sourced automation packages (like this one!) which are highlighted and linked on the [Public Projects](https://github.com/CodeFactoryLLC/Public-Projects) repo on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request. 
 
 ### Code of Conduct 
 
